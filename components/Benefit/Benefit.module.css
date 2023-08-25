@@ -1,0 +1,24 @@
+.benefit {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 40px;
+}
+
+.benefitDecor {
+  position: relative;
+  overflow: hidden;
+}
+
+.benefitDecor::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: #D2D2D2;
+  left: 50%;
+  top: 67px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
