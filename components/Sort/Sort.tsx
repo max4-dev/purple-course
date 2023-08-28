@@ -11,7 +11,7 @@ const Sort = ({sort, setSort, className, ...props}: SortProps) => {
         <SortIcon className={styles.sortIcon} />
         По рейтингу
       </span>
-      <span className={cn({[styles.active]: sort === SortEnum.Price})} onClick={() => setSort(SortEnum.Rating)}>
+      <span className={cn({[styles.active]: sort === SortEnum.Price})} onClick={() => setSort(SortEnum.Price)}>
         <SortIcon className={styles.sortIcon} />
         По Цене
       </span>

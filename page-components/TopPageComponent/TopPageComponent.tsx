@@ -8,17 +8,27 @@ import Benefit from "@/components/Benefit/Benefit";
 import P from "@/components/P/P";
 import Sort from "@/components/Sort/Sort";
 import { SortEnum } from "@/components/Sort/Sort.props";
+import { useReducer } from "react";
+import { sortReducer } from "@/components/Sort/sort.reducer";
 
 const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps) => {
-  console.log({ page, products, firstCategory });
+  const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(sortReducer, { products, sort: SortEnum.Rating });
+
+  const setSort = (sort: SortEnum) => {
+    dispatchSort({ type: sort })
+  }
   
-  return ( 
+  
+  return (
     <>
       <div className={styles.wrapper}>
         <div className={styles.title}>
           <Htag tag='h1'>{page.title}</Htag>
           {products && <Tag color='gray' size='m'>{products.length}</Tag>}
-          <Sort sort={SortEnum.Rating} setSort={() => {}} />
+          <Sort sort={sort} setSort={setSort} />
+        </div>
+        <div>
+          {sortedProducts && sortedProducts.map(p => (<div key={p._id}>{p.title}</div>))}
         </div>
         <div className={styles.hhTitle}>
           <Htag tag='h2'>Вакансии - {page.category}</Htag>

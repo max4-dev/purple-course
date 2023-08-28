@@ -7,6 +7,8 @@ import { withLayout } from "@/layout/Layout";
 import axios from "axios";
 import { MenuItem } from "@/interface/menu.interface";
 import { GetStaticProps } from "next";
+import Input from "@/components/Input/Input";
+import Textarea from "@/components/Textarea/Textarea";
 
 function Home({ menu, firstCategory }: HomeProps): JSX.Element {
   const [rating, setRating] = useState(4);
@@ -22,6 +24,8 @@ function Home({ menu, firstCategory }: HomeProps): JSX.Element {
       <Tag color="gray">Tag</Tag>
       <Tag color="red">Tag</Tag>
       <Tag color="green">Tag</Tag>
+      <Input />
+      <Textarea />
 
       <Rating isEditable rating={rating} setRating={setRating} />
     </>
