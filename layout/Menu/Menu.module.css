@@ -1,68 +1,65 @@
 .firstLevelBlock + .firstLevelBlock {
-  margin-top: 20px;
+	margin-top: 20px;
 }
 
 .firstLevel {
-  display: grid;
-  grid-template-columns: 24px 1fr;
-  gap: 20px;
-  align-items: center;
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 14px;
+	display: grid;
+	grid-template-columns: 24px 1fr;
+	gap: 20px;
+	align-items: center;
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 14px;
 }
 
 .firstLevelActive, .firstLevel:hover {
-  color: var(--primary);
+	color: var(--primary);
 }
 
 .firstLevelActive path, .firstLevel:hover path{
-  fill: var(--primary);
+	fill: var(--primary);
 }
 
 .secondLevelBlock {
-  margin-top: 3px;
-  margin-bottom: 10px;
+	margin-top: 3px;
+	margin-bottom: 10px;
+	overflow: hidden;
 }
 
 .secondLevel {
-  cursor: pointer;
-  text-transform: uppercase;
-  color: var(--gray-dark);
-  font-size: 12px;
-  font-weight: 300;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  z-index: 3;
+	cursor: pointer;
+	text-transform: uppercase;
+	color: var(--gray-dark);
+	font-size: 12px;
+	font-weight: 300;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	z-index: 3;
 }
 
 .secondBlock {
-  padding: 8px 0 8px 32px;
-  border-left: 1px solid #DFDFDF;
-  margin-left: 11px;
+	padding: 8px 0 8px 32px;
+	border-left: 1px solid #DFDFDF;
+	margin-left: 11px;
 }
 
 .secondBlock + .secondBlock {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 .thirdLevel {
-  display: block;
-  cursor: pointer;
-  color: var(--gray-dark);
-  font-size: 14px;
-  font-weight: 500;
-  outline-offset: -1px;
+	display: block;
+	cursor: pointer;
+	color: var(--gray-dark);
+	font-size: 14px;
+	font-weight: 500;
+	outline-offset: -1px;
 }
 
 .thirdLevel + .thirdLevel {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 .thirdLevelActive, .thirdLevel:hover {
-  color: var(--primary);
-}
-
-.secondLevelBlock {
-  overflow: hidden;
+	color: var(--primary);
 }

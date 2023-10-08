@@ -1,65 +1,65 @@
 .count {
-  padding: 20px;
-  text-align: center;
+	padding: 20px;
+	text-align: center;
 }
 
 .salary {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 20px;
-  text-align: center;
-  gap: 20px 0;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 20px;
+	text-align: center;
+	gap: 20px 0;
 }
 
 .salaryInner + .salaryInner{
-  border-left: 1px solid var(--gray-light);
+	border-left: 1px solid var(--gray-light);
 }
 
 .text {
-  color: var(--black);
-  font-size: 20px;
-  font-weight: 300;
-  margin-bottom: 10px;
+	color: var(--black);
+	font-size: 20px;
+	font-weight: 300;
+	margin-bottom: 10px;
 }
 
 .countCalue {
-  color: var(--primary);
-  font-size: 36px;
-  font-weight: 700;
+	color: var(--primary);
+	font-size: 36px;
+	font-weight: 700;
 }
 
 .salaryValue {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 10px;
+	font-size: 26px;
+	font-weight: 700;
+	margin-bottom: 10px;
 }
 
 .rate {
-  display: grid;
-  grid-template-columns: repeat(3, 20px);
-  gap: 10px;
-  justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(3, 20px);
+	gap: 10px;
+	justify-content: center;
 }
 
 .fill circle {
-  fill: var(--red);
+	fill: var(--red);
 }
 
-@media (max-width: 1200px) {
-  .hh {
-    grid-template-columns: 1fr;
-    background-color: red;
-  }
+@media (width <= 1200px) {
+	.hh {
+		grid-template-columns: 1fr;
+		background-color: red;
+	}
 }
 
-@media (max-width: 640px) {
-  .salary {
-    grid-template-columns: 1fr;
-  }
+@media (width <= 640px) {
+	.salary {
+		grid-template-columns: 1fr;
+	}
 
-  .salaryInner + .salaryInner{
-    border-left: none;
-    border-top: 1px solid var(--gray-light);
-    padding-top: 20px;
-  }
+	.salaryInner + .salaryInner{
+		border-left: none;
+		border-top: 1px solid var(--gray-light);
+		padding-top: 20px;
+	}
 }

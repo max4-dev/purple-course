@@ -1,36 +1,36 @@
 .input {
-  width: 100%;
-  padding: 7px 15px;
-  color: var(--black);
-  border: none;
-  outline-color: var(--primary);
-  background-color: var(--white);
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
-  font-size: 16px;
-  line-height: 22px;
-  font-family: var(--font-family);
+	width: 100%;
+	padding: 7px 15px;
+	color: var(--black);
+	border: none;
+	outline-color: var(--primary);
+	background-color: var(--white);
+	border-radius: 5px;
+	box-shadow: 0 4px 4px 0 rgb(0 0 0 / 5%);
+	font-size: 16px;
+	line-height: 22px;
+	font-family: var(--font-family);
 }
 
 .input::placeholder {
-  font-size: 16px;
-  font-weight: 400;
-  font-family: var(--font-family);
-  color: var(--gray-dark);
+	font-size: 16px;
+	font-weight: 400;
+	font-family: var(--font-family);
+	color: var(--gray-dark);
 }
 
 .error {
-  border: 1px solid var(--red)
+	border: 1px solid var(--red)
 }
 
 .errorMessage {
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  color: var(--red);
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	color: var(--red);
 }
 
 .inputBox {
-  position: relative;
-  padding-bottom: 5px;
+	position: relative;
+	padding-bottom: 5px;
 }

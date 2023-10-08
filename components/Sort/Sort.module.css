@@ -1,38 +1,38 @@
 .button {
-  font-size: 16px;
-  line-height: 22px;
+	font-size: 16px;
+	line-height: 22px;
 }
 
 .sortIcon {
-  display: none;
+	display: none;
 }
 
 .active {
-  color: var(--primary);
-  font-weight: 700;
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: center;
-  gap: 8px;
+	color: var(--primary);
+	font-weight: 700;
+	display: grid;
+	grid-template-columns: auto auto;
+	align-items: center;
+	gap: 8px;
 }
 
 .active .sortIcon {
-  display: block;
-  margin-right: 8px;
+	display: block;
+	margin-right: 8px;
 }
 
 .sort {
-  display: inline-block;
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 40px;
-  align-items: center;
+	display: inline-block;
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 40px;
+	align-items: center;
 }
 
 .sort button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .sortName {
-  display: none;
+	display: none;
 }

@@ -1,30 +1,30 @@
 .star svg {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 .star {
-  display: inline-block;
+	display: inline-block;
 }
 
 .filled svg {
-  fill: var(--primary);
+	fill: var(--primary);
 }
 
 .editable {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .ratingBox {
-  position: relative;
+	position: relative;
 }
 
 .errorMessage {
-  color: var(--red);
-  position: absolute;
-  bottom: -15px;
-  left: 0;
+	color: var(--red);
+	position: absolute;
+	bottom: -15px;
+	left: 0;
 }
 
 .error svg {
-  stroke: var(--red);
+	stroke: var(--red);
 }
