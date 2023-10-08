@@ -16,11 +16,11 @@ body {
 :root {
   --black: #3B434E;
   --white: #fff;
-  --primary: #7653FC;
+  --primary: #7351f5;
   --primary-hover: #4a29cf;
   --red: #FC836D;
-  --green: #1DC37E;
-  --gray-dark: #787D85;
+  --green: #007c48;
+  --gray-dark: #6c7077;
   --green-light: #C8F8E4;
   --gray-light:  #EBEBEB;
   --font-family: 'Noto Sans', sans-serif;
@@ -29,4 +29,27 @@ body {
 a{
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: 'Noto Sans', sans-serif;
+  color: var(--black);
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.visualyHidden {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
 }

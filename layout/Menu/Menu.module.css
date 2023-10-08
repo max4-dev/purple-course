@@ -21,8 +21,8 @@
 }
 
 .secondLevelBlock {
-  margin-top: 13px;
-  margin-bottom: 20px;
+  margin-top: 3px;
+  margin-bottom: 10px;
 }
 
 .secondLevel {
@@ -33,6 +33,7 @@
   font-weight: 300;
   margin-top: 5px;
   margin-bottom: 10px;
+  z-index: 3;
 }
 
 .secondBlock {
@@ -51,6 +52,7 @@
   color: var(--gray-dark);
   font-size: 14px;
   font-weight: 500;
+  outline-offset: -1px;
 }
 
 .thirdLevel + .thirdLevel {
@@ -62,9 +64,5 @@
 }
 
 .secondLevelBlock {
-  display: none;
-}
-
-.secondLevelBlockOpened {
-  display: block;
+  overflow: hidden;
 }

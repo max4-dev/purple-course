@@ -1,3 +1,4 @@
+import { API } from "@/helpers/api";
 import { firstLevelMenu } from "@/helpers/helpers";
 import { MenuItem } from "@/interface/menu.interface";
 import { ProductModel } from "@/interface/product.interface";
@@ -38,7 +39,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({ params }: Ge
   }
 
   try {
-    const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
+    const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
       firstCategory: firstCategoryItem.id
     })
     return {

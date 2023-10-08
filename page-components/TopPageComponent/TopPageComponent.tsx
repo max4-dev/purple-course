@@ -8,27 +8,36 @@ import Benefit from "@/components/Benefit/Benefit";
 import P from "@/components/P/P";
 import Sort from "@/components/Sort/Sort";
 import { SortEnum } from "@/components/Sort/Sort.props";
-import { useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { sortReducer } from "@/components/Sort/sort.reducer";
+import Product from "@/components/Product/Product";
+import { useScrollY } from "@/hooks/useScrollY";
+import { useReducedMotion } from "framer-motion";
 
 const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentProps) => {
-  const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(sortReducer, { products, sort: SortEnum.Rating });
+  const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(sortReducer, { products, sort: SortEnum.Rating });const shouldReduceMotion = useReducedMotion();
+
+  const y = useScrollY();
+  
 
   const setSort = (sort: SortEnum) => {
     dispatchSort({ type: sort })
-  }
-  
+  };
+
+  useEffect(() => {
+    dispatchSort({ type: 'reset', initialState: products })
+  }, [products])
   
   return (
     <>
-      <div className={styles.wrapper}>
+      {<div className={styles.wrapper}>
         <div className={styles.title}>
           <Htag tag='h1'>{page.title}</Htag>
-          {products && <Tag color='gray' size='m'>{products.length}</Tag>}
+          {products && <Tag color='gray' size='m' aria-label={products.length + ' элементов'}>{products.length}</Tag>}
           <Sort sort={sort} setSort={setSort} />
         </div>
-        <div>
-          {sortedProducts && sortedProducts.map(p => (<div key={p._id}>{p.title}</div>))}
+        <div role="list">
+          {sortedProducts && sortedProducts.map(p => (<Product role="listitem" layout={shouldReduceMotion ? false : true} product={p} key={p._id} />))}
         </div>
         <div className={styles.hhTitle}>
           <Htag tag='h2'>Вакансии - {page.category}</Htag>
@@ -54,7 +63,7 @@ const TopPageComponent = ({ page, products, firstCategory }: TopPageComponentPro
         <div className={styles.skills}>
           {page.tags.map((tag, i) => <Tag className={styles.skillsTag} color="primary" key={i}>{tag}</Tag>)}
         </div>
-      </div>
+      </div>}
     </> 
   );
 }
