@@ -46,12 +46,12 @@ export interface Blog {
 }
 
 export interface HhData {
-  count: number;
-  juniorSalary: number;
-  middleSalary: number;
-  seniorSalary: number;
-  updatedAt: string;
-  _id: string;
+  count?: number;
+  juniorSalary?: number;
+  middleSalary?: number;
+  seniorSalary?: number;
+  updatedAt?: string;
+  _id?: string;
 }
 
 export interface HhDataAdvantage {

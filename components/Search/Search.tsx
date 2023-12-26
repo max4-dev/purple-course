@@ -3,7 +3,7 @@ import styles from "./Search.module.css";
 import cn from 'classnames';
 import Input from "../Input/Input";
 import { Button } from "../Button/Button";
-import { useState } from "react";
+import { KeyboardEventHandler, useState } from "react";
 import SearchIcon from './search.svg'
 import { useRouter } from "next/router";
 
@@ -20,7 +20,7 @@ const Search = ({className, ...props}: SearchProps) => {
     })
   }
 
-  const handleKeyDown = (e: KeyboardEvent) => {
+  const handleKeyDown = (e: any) => {
     if (e.key === 'Enter') {
       goToSearch();
     }

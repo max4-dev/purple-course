@@ -15,7 +15,7 @@ const CardData = ({ count, juniorSalary, middleSalary, seniorSalary }: CardDataP
       <Card className={styles.salary}>
         <div className={styles.salaryInner}>
           <p className={styles.text}>Начальный</p>
-          <h5 className={styles.salaryValue}>{priceRu(juniorSalary)}</h5>
+          <h5 className={styles.salaryValue}>{juniorSalary && priceRu(juniorSalary)}</h5>
           <div className={styles.rate}>
             <RateIcon className={styles.fill} />
             <RateIcon />
@@ -24,7 +24,7 @@ const CardData = ({ count, juniorSalary, middleSalary, seniorSalary }: CardDataP
         </div>
         <div className={styles.salaryInner}>
           <p className={styles.text}>Средний</p>
-          <h5 className={styles.salaryValue}>{priceRu(middleSalary)}</h5>
+          <h5 className={styles.salaryValue}>{middleSalary && priceRu(middleSalary)}</h5>
           <div className={styles.rate}>
             <RateIcon className={styles.fill} />
             <RateIcon className={styles.fill} />
@@ -33,7 +33,7 @@ const CardData = ({ count, juniorSalary, middleSalary, seniorSalary }: CardDataP
         </div>
         <div className={styles.salaryInner}>
           <p className={styles.text}>Профессионал</p>
-          <h5 className={styles.salaryValue}>{priceRu(seniorSalary)}</h5>
+          <h5 className={styles.salaryValue}>{seniorSalary && priceRu(seniorSalary)}</h5>
           <div className={styles.rate}>
             <RateIcon className={styles.fill} />
             <RateIcon className={styles.fill} />

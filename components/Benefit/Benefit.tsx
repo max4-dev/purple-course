@@ -5,7 +5,7 @@ import { Htag } from "../Htag/Htag";
 import P from "../P/P";
 import Check from './check.svg';
 
-const Benefit = ({ title, description, _id }: BenefitProps) => {
+const Benefit = ({ title, description }: BenefitProps) => {
   return (
     <div className={styles.benefit}>
       <div className={styles.benefitDecor}>

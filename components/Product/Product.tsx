@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import { ProductProps } from "./Product.props";
 import styles from "./Product.module.css";
 import cn from 'classnames';
@@ -7,8 +8,7 @@ import Tag from "../Tag/Tag";
 import { Button } from "../Button/Button";
 import { declOfNum, priceRu } from "@/helpers/helpers";
 import Divider from "../Divider/Divider";
-import Image from "next/image";
-import { ForwardedRef, forwardRef, useRef, useState } from "react";
+import { ForwardedRef, MouseEvent, forwardRef, useRef, useState } from "react";
 import Review from "../Review/Review";
 import { ReviewModel } from "@/interface/product.interface";
 import ReviewForm from "../ReviewForm/ReviewForm";
@@ -28,7 +28,7 @@ const Product = motion(forwardRef(({product, className, ...props}: ProductProps,
     }
   }
 
-  const scrollToReview = (e) => {
+  const scrollToReview = (e: MouseEvent) => {
     e.preventDefault();
 
     setIsReviewOpened(true);
@@ -43,7 +43,7 @@ const Product = motion(forwardRef(({product, className, ...props}: ProductProps,
     <div className={className} ref={ref} {...props}>
       <Card className={cn(className, styles.product)}>
         <div className={styles.logo}>
-          <Image src={process.env.NEXT_PUBLIC_DOMAIN + product.image} width={70} height={70} alt={product.title} />
+          <img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} width={70} height={70} alt={product.title} />
         </div>
         <h5 className={styles.title}>
           {product.title}
@@ -68,7 +68,7 @@ const Product = motion(forwardRef(({product, className, ...props}: ProductProps,
           <Rating rating={product.reviewAvg ?? product.initialRating} />
         </div>
         <div className={styles.tags}>
-          {product.categories.map(c => <Tag className={styles.category} color="ghost" key={c}>{c}</Tag>)}
+          {product.categories.map((c: any) => <Tag className={styles.category} color="ghost" key={c}>{c}</Tag>)}
         </div>
         <div className={styles.priceTitle} aria-hidden>
           цена
@@ -87,7 +87,7 @@ const Product = motion(forwardRef(({product, className, ...props}: ProductProps,
           {product.description}
         </div>
         <div className={styles.feature}>
-          {product.characteristics.map((c) => (
+          {product.characteristics.map((c: any) => (
             <div className={styles.characteristics} key={c.name}>
               <span className={styles.characteristicsName}>{c.name}</span>
               <span className={styles.characteristicsDots}></span>
@@ -115,7 +115,7 @@ const Product = motion(forwardRef(({product, className, ...props}: ProductProps,
         <Card className={cn(styles.reviews)} color="accent" ref={reviewRef} tabIndex={isReviewOpened ? 0 : -1}>
           {product.reviews.map((review: ReviewModel) => 
             <div key={review._id}>
-              <Review review={review} key={review._id} />
+              <Review review={review} key={review._id} isOpened={isReviewOpened} />
               <Divider />
             </div>
           )}
@@ -125,5 +125,6 @@ const Product = motion(forwardRef(({product, className, ...props}: ProductProps,
     </div>
    );
 }));
- 
+
+Product.displayName = 'Product';
 export default Product;

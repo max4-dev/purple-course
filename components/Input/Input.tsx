@@ -11,5 +11,6 @@ const Input = forwardRef(({ error, className, ...props }: InputProps, ref: Forwa
     </div>
    );
 });
- 
+
+Input.displayName = 'Input';
 export default Input;

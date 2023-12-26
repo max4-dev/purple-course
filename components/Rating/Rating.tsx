@@ -6,7 +6,7 @@ import StarIcon from './star.svg';
 
 const Rating = forwardRef(({ isEditable = false, rating, setRating, error, tabIndex, ...props }: RatingProps, ref: ForwardedRef<HTMLDivElement>) => {
   const [ratingArray, setRatingArray] = useState(new Array(5).fill(<></>));
-  const ratingArrayRef = useRef<HTMLSpanElement | null>([]);
+  const ratingArrayRef = useRef<HTMLSpanElement | any>([]);
 
   useEffect(() => {
     constructRating(rating);
@@ -91,4 +91,5 @@ const Rating = forwardRef(({ isEditable = false, rating, setRating, error, tabIn
    );
 });
  
+Rating.displayName = 'Rating';
 export default Rating;

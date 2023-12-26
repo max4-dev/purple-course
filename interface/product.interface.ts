@@ -1,27 +1,29 @@
 export interface ProductModel {
+  [x: string]: string;
   _id: string;
-  categories: string[];
-  tags: string[];
+  categories: string;
+  tags: string;
   title: string;
   image: string;
   description: string;
   link: string;
-  price: number;
-  credit: number;
-  oldPrice: number;
-  characteristics: ProductCharacteristic[];
-  advantages?: string;
-  initialRating: number;
+  price: string;
+  credit: string;
+  oldPrice: string;
+  characteristics: string;
+  advantages: string;
+  initialRating: string;
   createdAt: string;
   updatedAt: string;
-  __v: number;
+  __v: string;
   html: string;
-  blog: Blog;
+  blog: string;
   companyId: string;
-  clicks: number;
-  reviews: Review[];
-  reviewCount: number;
-  reviewAvg?: number;
+  clicks: string;
+  reviews: any;
+  reviewCount: string;
+  reviewAvg: string;
+  length: string;
 }
 
 export interface ReviewModel {

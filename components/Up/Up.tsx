@@ -28,7 +28,7 @@ const Up = ({className, ...props}: UpProps) => {
       animate={controls}
       initial={{opacity: 0}}
     >
-      <ButtonIcon appearance="primary"  icon="up" onClick={scrollToTop} />
+      <ButtonIcon appearance="primary" aria-label="Наверх" icon="up" onClick={scrollToTop} />
     </motion.div>
    );
 };

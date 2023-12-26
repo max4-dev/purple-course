@@ -31,6 +31,7 @@
 // };
 
 module.exports = {
+  assetPrefix: './',
   images: {
     domains: ['courses-top.ru'],
   },

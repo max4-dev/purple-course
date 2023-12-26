@@ -10,6 +10,8 @@ import { GetStaticProps } from "next";
 import Input from "@/components/Input/Input";
 import Textarea from "@/components/Textarea/Textarea";
 import { API } from "@/helpers/api";
+import Error from "next/error";
+import { Error404 } from "./404";
 
 function Home({ menu, firstCategory }: HomeProps): JSX.Element {
   const [rating, setRating] = useState(4);

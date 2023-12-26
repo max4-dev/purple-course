@@ -1,1 +1,1 @@
-export * from './TopPageComponent/TopPageComponent.tsx';
+export * from './TopPageComponent/TopPageComponent';

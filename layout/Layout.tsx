@@ -24,7 +24,7 @@ export const Layout = ({children}: LayoutProps) => {
     <div className={styles.wrapper}>
       <a
         onFocus={() => setIsSkipLinkDisplayed(true)}
-        className={cn(styles.skipLink, {[styles.displayed]: isSkipLinkDisplayed})} tabIndex={1}
+        className={cn(styles.skipLink, {[styles.displayed]: isSkipLinkDisplayed})} tabIndex={0}
         onKeyDown={skipContentAction}
       >
           Сразу к содержанию

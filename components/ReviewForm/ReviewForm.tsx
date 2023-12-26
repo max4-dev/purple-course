@@ -15,7 +15,7 @@ import { KeyboardEvent, useState } from "react";
 const ReviewForm = ({ isOpened, productId, className, ...props }: ReviewFormProps) => {
   const { register, control, handleSubmit, formState: { errors }, reset, clearErrors } = useForm<IReviewForm>();
   const [isSuccess, setIsSuccess] = useState(false);
-  const [error, setError] = useState<string>();
+  const [error, setError] = useState<string>('');
   
 
   const onSubmit = async (formData: IReviewForm) => {
@@ -29,14 +29,14 @@ const ReviewForm = ({ isOpened, productId, className, ...props }: ReviewFormProp
       }
     } catch (error) {
       console.log(error);
-      setError(error.message);
+      setError('error');
     }
   }
 
   const handleKeyClose = (key: KeyboardEvent) => {
     if (key.code === "Enter" || key.code === "Space") {
       setIsSuccess(false);
-      setError();
+      setError('');
     }
   }
   
@@ -69,13 +69,13 @@ const ReviewForm = ({ isOpened, productId, className, ...props }: ReviewFormProp
         <CloseIcon aria-label="Закрыть оповещение" tabIndex={0} onClick={() => setIsSuccess(false)} onKeyDown={handleKeyClose} className={styles.close} />
       </div>}
       {error && <div className={styles.error} role="alert">
-        <div tabIndex={0} tabIndex={0} className={styles.errorTitle}>
+        <div tabIndex={0} className={styles.errorTitle}>
           Произошла ошибка
         </div>
         <div>
           Что-то пошло не так, попробуйте обновить страницу
         </div>
-        <button aria-label="Закрыть оповещение" tabIndex={0} onClick={() => setError()} onKeyDown={handleKeyClose}>
+        <button aria-label="Закрыть оповещение" tabIndex={0} onClick={() => setError('')} onKeyDown={handleKeyClose}>
           <CloseIcon className={styles.close} />
         </button>
       </div>}
@@ -83,4 +83,6 @@ const ReviewForm = ({ isOpened, productId, className, ...props }: ReviewFormProp
    );
 };
 
+
+ReviewForm.displayName = 'ReviewForm';
 export default ReviewForm;

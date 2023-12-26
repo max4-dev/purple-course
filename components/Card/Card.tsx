@@ -10,5 +10,6 @@ const Card = forwardRef(({color = 'white', children, className, ...props}: CardP
     </div>
    );
 });
- 
+
+Card.displayName = 'Card';
 export default Card;
